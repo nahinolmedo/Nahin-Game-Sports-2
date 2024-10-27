@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen">
+
+  <main class="w-full max-w-md space-y-8 p-8 bg-white rounded-lg shadow-lg">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold text-gray-900">Iniciar Sesión</h2>
+      <p class="mt-2 text-sm text-gray-600">Bienvenido de nuevo! Por favor ingresa.</p>
+    </div>
+
+    <div class="space-y-4">
+      <!-- Campo de Email -->
+      <div class="relative">
+        <input id="login-email" type="email" placeholder="Correo Electrónico" 
+          class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400">
+      </div>
+
+      <!-- Campo de Contraseña -->
+      <div class="relative">
+        <input id="login-password" type="password" placeholder="Contraseña" 
+          class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400">
+      </div>
+
+      <!-- Botón de Login -->
+      <button id="login-button" class="w-full py-2 bg-indigo-600 text-white font-bold rounded-md hover:bg-indigo-500">
+        Iniciar Sesión
+      </button>
+    </div>
+
+    <div class="text-center mt-4">
+      <p class="text-sm">¿No tienes una cuenta? 
+        <a href="register.html" class="text-indigo-500 hover:underline">Regístrate</a>
+      </p>
+    </div>
+
+    <p id="login-error" class="mt-4 text-center text-red-500 hidden">Correo o contraseña incorrectos.</p>
+  </main>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+
+  <!-- Script para autenticación de usuario con Firebase -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDPTUxnILadJhsdPOqyw4oOCR-gZgm4slM",
+      authDomain: "programacion-movil-d2ad8.firebaseapp.com",
+      databaseURL: "https://programacion-movil-d2ad8-default-rtdb.firebaseio.com",
+      projectId: "programacion-movil-d2ad8",
+      storageBucket: "programacion-movil-d2ad8.appspot.com",
+      messagingSenderId: "488507039253",
+      appId: "1:488507039253:web:46b7bf6e1f49fefdd9781c"
+    };
+
+    // Inicializar Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const loginButton = document.getElementById("login-button");
+    const loginError = document.getElementById("login-error");
+
+    // Iniciar sesión con Firebase
+loginButton.addEventListener("click", async () => {
+  const email = document.getElementById("login-email").value.trim();
+  const password = document.getElementById("login-password").value;
+
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    alert("Inicio de sesión exitoso!");
+
+    // Guardar los datos del usuario en localStorage
+    localStorage.setItem('usuario', JSON.stringify(userCredential.user));
+
+    // Redireccionar a la página de inicio
+    window.location.href = "index.html";  // Aquí cambiamos a la página de inicio
+  } catch (error) {
+    console.error("Error al iniciar sesión:", error);
+
+    // Mostrar mensaje de error
+    loginError.textContent = "Correo o contraseña incorrectos.";
+    loginError.classList.remove("hidden");
+  }
+});
+
+  </script>
+</body>
+</html>

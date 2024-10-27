@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon"  sizes="228x228" type="image/svg+xml" href="https://play-lh.googleusercontent.com/EEuWD_Kpf7GrFGXwbWtMD5ozCbpgxAOj10Qo0P7rMkjfHTFH7vXP5ri14UiqV-_UiKBr=s94-rw">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - NAHIN GAME SPORTS</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+   <!-- Navbar -->
+<header class="bg-black text-white">
+    <div class="container mx-auto flex justify-between items-center p-4">
+        <a href="./index.html" class="text-2xl font-bold">NAHIN GAME SPORTS</a>
+        <nav>
+            <ul class="flex space-x-4">
+                <li><a href="./index.html" class="hover:text-yellow-500">Inicio</a></li>
+                <li><a href="./productos.html" class="hover:text-yellow-500">Productos</a></li>
+                <li><a href="./carrito.html" class="hover:text-yellow-500">Carrito</a></li>
+                <li><button class="hover:text-yellow-500" id="cerrar-sesion">Cerrar Sesión</button></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="py-12">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">Contáctanos</h2>
+            <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-md space-y-8">
+                <!-- Formulario de contacto -->
+                <form class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-gray-700">Nombre:</label>
+                        <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none" placeholder="Tu nombre">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700">Correo Electrónico:</label>
+                        <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none" placeholder="Tu correo electrónico">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-700">Mensaje:</label>
+                        <textarea id="message" class="w-full px-4 py-2 border rounded-lg focus:outline-none" placeholder="Tu mensaje"></textarea>
+                    </div>
+                    <button type="submit" class="bg-yellow-500 text-black px-6 py-2 rounded-full hover:bg-yellow-600">Enviar</button>
+                </form>
+
+                <!-- Información de contacto adicional -->
+                <div class="text-center space-y-4">
+                    <p class="text-gray-700">También puedes contactarnos directamente a través de los siguientes medios:</p>
+                    <div>
+                        <p class="text-lg font-semibold">Teléfono:</p>
+                        <a href="tel:+593998639585" class="text-yellow-500 hover:underline">0998639585</a>
+                    </div>
+                    <div>
+                        <p class="text-lg font-semibold">Correo Electrónico:</p>
+                        <a href="mailto:nahingamesports@gmail.com" class="text-yellow-500 hover:underline">nahingamesports@gmail.com</a>
+                    </div>
+                    <div>
+                        <p class="text-lg font-semibold">Ubicación:</p>
+                        <p class="text-gray-700">Machala, Ecuador</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Nahin Game Sports. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="./cerrarSesion.js"></script>
+ <!-- Script para cerrar sesión -->
+ <script>
+    document.getElementById('cerrar-sesion').addEventListener('click', () => {
+        const confirmacion = confirm('¿Estás seguro de que quieres cerrar sesión?');
+        if (confirmacion) {
+            // Limpiar el localStorage o cualquier sesión guardada
+            localStorage.clear();
+
+            // Redireccionar automáticamente al login
+            window.location.href = './login.html';  // Ajusta la ruta si tu login está en otra carpeta
+        }
+    });
+</script>
+</body>
+</html>

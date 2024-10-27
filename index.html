@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon"  sizes="228x228" type="image/svg+xml" href="https://play-lh.googleusercontent.com/EEuWD_Kpf7GrFGXwbWtMD5ozCbpgxAOj10Qo0P7rMkjfHTFH7vXP5ri14UiqV-_UiKBr=s94-rw">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAHIN GAME SPORTS - Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <header class="bg-black text-white">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <a href="./index.html" class="text-2xl font-bold">NAHIN GAME SPORTS</a>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="./index.html" class="hover:text-yellow-500">Inicio</a></li>
+                    <li><a href="./productos.html" class="hover:text-yellow-500">Productos</a></li>
+                    <li><a href="./carrito.html" class="hover:text-yellow-500">Carrito</a></li>
+                    <li><a href="./nosotros.html" class="hover:text-yellow-500">Nosotros</a></li>
+                    <li><a href="./ayuda.html" class="hover:text-yellow-500">Ayuda</a></li>
+                    <li><a href="./contacto.html" class="hover:text-yellow-500">Contacto</a></li>
+                    <li><button id="cerrar-sesion" class="hover:text-red-500">Cerrar Sesión</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    </div>
+</header>
+
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-cover bg-center h-screen" style="background-image: url('https://phantom-marca.unidadeditorial.es/212aed2c050dd7d450cc4b6a8ecbc760/resize/990/f/webp/assets/multimedia/imagenes/2024/09/09/17258758445199.jpg');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto h-full flex flex-col justify-center items-center text-center relative">
+            <h1 class="text-5xl font-bold text-white mb-4">Bienvenido a Nahin Game Sports</h1>
+            <p class="text-xl text-white mb-8">Los mejores juegos deportivos del mundo</p>
+            <a href="./productos.html" class="bg-yellow-500 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-600">Explorar Productos</a>
+        </div>
+    </section>
+
+    <!-- YouTube Video Section -->
+    <section class="py-12 bg-gray-200">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Mira el video oficial del último lanzamiento de EA SPORTS: "FC 25"</h2>
+            <div class="relative w-full h-0" style="padding-bottom: 56.25%;">
+                <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/eheJ8YtUEJo" 
+                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- EA Play Section -->
+    <section class="relative bg-cover bg-center h-screen" style="background-image: url('https://gamerstyle.com.mx/wp-content/uploads/2022/03/Juegos-de-EA.jpg');">
+        <div class="absolute inset-0 bg-blue-900 opacity-75"></div>
+        <div class="container mx-auto h-full flex flex-col justify-center items-center text-center relative">
+            <h2 class="text-4xl font-bold text-white mb-4">CLUB DE MIEMBROS "NAHIN GAME SPORTS"</h2>
+            <p class="text-lg text-white mb-6">Desbloquea un mundo de emociones. Disfruta de acceso ilimitado a una colección de los mejores títulos de NAHIN GAME SPORTS, pruebas de una selección de juegos nuevos y mucho más.</p>
+            <a href="#" class="bg-yellow-500 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-600">Únete ya</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Nahin Game Sports. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('cerrar-sesion').addEventListener('click', () => {
+            const confirmacion = confirm('¿Estás seguro de que quieres cerrar sesión?');
+            if (confirmacion) {
+                // Limpiar el localStorage o cualquier sesión guardada
+                localStorage.clear();
+    
+                // Redireccionar automáticamente al login
+                window.location.href = './login.html';  // Ajusta la ruta si tu login está en otra carpeta
+            }
+        });
+    </script>
+    
+</body>
+</html>
